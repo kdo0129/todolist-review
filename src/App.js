@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { TodoHead, TodoCreate, TodoList } from './components';
+import { TodoHead, TodoList } from './components';
+import { TodoProvider } from './context/Todocontext';
 
 const GlobalStyle = createGlobalStyle`
 	* {
@@ -35,13 +36,13 @@ const TodoBlock = styled.div`
 
 const App = () => {
 	return (
-		<>
+		<TodoProvider>
 			<GlobalStyle />
 			<TodoBlock>
 				<TodoHead />
 				<TodoList />
 			</TodoBlock>
-		</>
+		</TodoProvider>
 	);
 };
 
